@@ -14,25 +14,6 @@ export default function Find({ navigation }) {
   const [password, setPassword] = useState('');
   
 
-  const [selected, setSelected] = useState("");
-  
-  const data = [
-      {key:'1', value:'Nigeria'},
-      {key:'2', value:'Germany'},
-      {key:'3', value:'Canada'},
-      {key:'4', value:'Belgium'},
-      {key:'5', value:'U.K'},
-      {key:'6', value:'U.S.A'},
-      {key:'7', value:'London'},
-  ];
-  
-  const [gender, setGender] = useState("");
-  
-  const datas = [
-      {key:'1', value:'Male'},
-      {key:'2', value:'Female'},
-      {key:'3', value:'Prefer Not To Say'},
-  ];
 
   const [agree, setAgree] = useState(false);
 
@@ -40,16 +21,10 @@ return (
   <View style={styles.all}>
       <View>
           <Text style={styles.well1}>WELCOME</Text>
-          <Text style={styles.well}>We are exited you are here, kindly fill in {'\n'} your details below!</Text>
+          <Text style={styles.well}>We are excited you are here, kindly fill in {'\n'} your details below!</Text>
       </View>
 
-      <View  style={styles.mail}>
-          <TextInput
-             style={styles.input}
-              placeholder="Name"
-              keyboardType= 'default'
-              placeholderTextColor = '#016AFB'
-              />        
+      <View  style={styles.mail}>        
   
           <TextInput
              style={styles.input1}
@@ -61,27 +36,6 @@ return (
      
       </View>
 
-      <SelectList
-        setSelected={(val) => setSelected(val)} 
-        data={data} 
-        save="value"
-        placeholder='country'
-        boxStyles={styles.list}
-        dropdownStyles={styles.back}
-        dropdownTextStyles={styles.mytext}
-        inputStyles={styles.myinput}
-    />
-
-      <SelectList 
-        setSelected={(val) => setGender(val)} 
-        data={datas} 
-        save="value"
-        placeholder='Gender'
-        boxStyles={styles.list}
-        dropdownStyles={styles.back}
-        dropdownTextStyles={styles.mytext}
-        inputStyles={styles.myinput}
-       />
 
      <View style={styles.pass}>
       <TextInput
@@ -104,17 +58,17 @@ return (
       
       <View style={styles.check}>
        <Checkbox value={agree} onValueChange={setAgree} color={'#016AFB'} />
-       <Text style={styles.box}>Agree To Terms And Condition</Text>
+       <Text style={styles.box}>Rememeber Me</Text>
       </View>
        
        <Pressable style={styles.press}>
-         <Text style={styles.buttonText}>Register</Text>
+         <Text style={styles.buttonText}>Sign In</Text>
        </Pressable>
       
       <View style={styles.have}>
-       <Text style={styles.account}> Already have an account? </Text>
+       <Text style={styles.account}> Dont have an account? </Text>
        <Pressable>
-         <Text onPress={() => navigation.navigate('SignIn')} style={styles.sin}>Sign In</Text>
+         <Text onPress={() => navigation.navigate('SignUp')} style={styles.sin}>Sign Up</Text>
        </Pressable>
       </View>
        
@@ -150,21 +104,11 @@ const styles = StyleSheet.create({
   padding: 10,
   borderBottomColor: '#016AFB',
   borderBottomWidth: 1,
-  marginBottom: 40,
+  marginBottom: 50,
   marginLeft: 35,
   marginRight: 35,
-  // marginTop: 20,
  },
- input : {
-  padding: 10,
-  borderBottomColor: '#016AFB',
-  borderBottomWidth: 1,
-  marginBottom: 20,
-  marginLeft: 35,
-  marginRight: 35,
-  marginTop: 20,
-  fontFamily: 'kanit-regular',
- },
+
  input1 : {
   padding: 10,
   borderBottomColor: '#016AFB',
@@ -172,7 +116,7 @@ const styles = StyleSheet.create({
   marginBottom: 40,
   marginLeft: 35,
   marginRight: 35,
-  marginTop: 20,
+  marginTop: 100,
   fontFamily: 'kanit-regular',
  },
  inputField: {
@@ -186,20 +130,6 @@ const styles = StyleSheet.create({
   borderWidth: 0,
   marginLeft: 25,
   marginRight: 30,
- },
- back : {
-  backgroundColor: '#016AFB',
-  marginLeft: 35,
-  marginRight: 35,
-  borderWidth: 0,
- },
- mytext: {
-  color: 'white',
-  fontFamily: 'kanit-regular',
- },
- myinput : {
-  color: '#016AFB',
-  fontFamily: 'kanit-regular',
  },
  check : {
   flexDirection: 'row',
@@ -234,7 +164,7 @@ have: {
   justifyContent: 'center',
   gap: 30,
   paddingBottom: 100,
-  paddingTop: 10,
+  paddingTop: 150,
 },
 account : {
   color: '#016AFB',

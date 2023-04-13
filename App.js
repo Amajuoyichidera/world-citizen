@@ -5,6 +5,7 @@ import Find from './Screens/Find';
 import Earn from './Screens/Earn';
 import Cash from './Screens/Cash';
 import SignUp from './Screens/SignUp';
+import SignIn from './Screens/SignIn';
 import { useFonts  } from 'expo-font';
 import React, { useEffect } from 'react';
 import * as Splashscreen from 'expo-splash-screen';
@@ -70,12 +71,12 @@ return (
         component={SignUp}
         options={{ headerShown: false}}
          />
-           {/* <Stack.Screen
-        name='Fried'
-        component={Fried}
+           <Stack.Screen
+        name='SignIn'
+        component={SignIn}
         options={{ headerShown: false}}
          />
-           <Stack.Screen
+           {/* <Stack.Screen
         name='Moi'
         component={Moi}
         options={{ headerShown: false}}
