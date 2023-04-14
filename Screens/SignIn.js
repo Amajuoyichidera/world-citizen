@@ -3,12 +3,11 @@ import React from 'react';
 import { useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTogglePasswordVisibility } from '../Screens/useTogglePasswordVisibility';
-import { SelectList } from 'react-native-dropdown-select-list';
 import Checkbox from 'expo-checkbox';
 
 
 
-export default function Find({ navigation }) {
+export default function SignIn({ navigation }) {
   const { passwordVisibility, rightIcon, handlePasswordVisibility } =
   useTogglePasswordVisibility();
   const [password, setPassword] = useState('');
@@ -61,7 +60,7 @@ return (
        <Text style={styles.box}>Rememeber Me</Text>
       </View>
        
-       <Pressable style={styles.press}>
+       <Pressable onPress={() => navigation.navigate('Things')} style={styles.press}>
          <Text style={styles.buttonText}>Sign In</Text>
        </Pressable>
       
@@ -88,6 +87,7 @@ const styles = StyleSheet.create({
   textAlign: 'center',
   color: '#016AFB',
   fontFamily: 'kanit-regular',
+  fontSize: 16,
  },
  well1: {
   fontWeight: 'bold',
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
  box : {
   color: '#016AFB',
   fontFamily: 'kanit-bold',
+  fontSize: 16,
  },
  press: {
   borderRadius: 30,
@@ -169,6 +170,7 @@ have: {
 account : {
   color: '#016AFB',
   fontFamily: 'kanit-medium',
+  fontSize: 16,
 },
 sin : {
   color: '#016AFB',
