@@ -8,6 +8,7 @@ import SignUp from './Screens/SignUp';
 import SignIn from './Screens/SignIn';
 import Things from './Screens/Things';
 import Home from './Screens/Home';
+import Locate from './Screens/Locate';
 import Give from './Screens/Give';
 import { useFonts  } from 'expo-font';
 import React, { useEffect } from 'react';
@@ -127,6 +128,11 @@ return (
        <Stack.Screen
       name='Home'
       component={Home}
+      options={{ headerShown: false}}
+       />
+       <Stack.Screen
+      name='Locate'
+      component={Locate}
       options={{ headerShown: false}}
        />
   </Stack.Navigator>

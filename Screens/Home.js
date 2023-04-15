@@ -24,41 +24,59 @@ return (
                 />      
     </View>
 
-    <Text>Community</Text>
+    <Text style={styles.com}>Community</Text>
 
-    <View>
-     <Image source={require('../assets/com.png')} />
+    <View style={styles.we}>
+     <Image style={styles.comImg} source={require('../assets/com.png')} />
+
      <View>
-      <Text>We share with you some {'\n'} of our outreaches around {'\n'} the globe and the impact {'\n'} of your donation world {'\n'} wide</Text>
-     </View>
-     <Pressable style={styles.press}>
-          <Text style={styles.buttonText}>Get Started</Text>
+      <Text style={styles.share}>We share with you some {'\n'} of our outreaches around {'\n'} the globe and the impact {'\n'} of your donation world {'\n'} wide</Text>
+      <Pressable style={styles.press}>
+          <Text style={styles.buttonText}>Join Conversation</Text>
       </Pressable>
+     </View>
+    
     </View>
 
-     <Text>Location</Text>
-     <Text>Help us find you  by saving a perfered location for {'\n'}  your pick up next donation</Text>
-    <Pressable>
-      <Text>Save a location</Text>
-      <FontAwesome5 name="greater-than" size={24} color="black" />
+     <Text style={styles.com}>Location</Text>
+     <Text style={styles.help}>Help us find you  by saving a perfered location for</Text>
+     <Text style={styles.help}>your pick up next donation</Text>
+
+    <Pressable onPress={() => navigation.navigate('Locate')} style={styles.save}>
+      <Text style={styles.help}>Save a location</Text>
+      <FontAwesome5 name="greater-than" size={24} color='#016AFB' />
     </Pressable>
 
-    <Text>Our Visions at WELOVE</Text>
-    <Text>We are glad to reach out to millions of people to meet {'\n'} there immidiate clothing need, we hope to reach out {'\n'} to more people through you. Watch the short clips {'\n'} below to learn more.</Text>
+    <Text style={styles.vision}>Our Visions at WELOVE</Text>
+    <Text style={styles.help}>We are glad to reach out to millions of people to meet {'\n'} there immidiate clothing need, we hope to reach out {'\n'} to more people through you. Watch the short clips {'\n'} below to learn more.</Text>
    
-     <View>
-     <Image source={require('../assets/boy.png')} />
-     <Image source={require('../assets/old.png')} />
-
+     <View style={styles.boy}>
+     <Image style={styles.old} source={require('../assets/boy.png')} />
+     <Image style={styles.old} source={require('../assets/old.png')} />
      </View>
   </ScrollView>
 
+       <View style={styles.logo}>
        <View>
-       <FontAwesome onPress={() => navigation.navigate('Things')} name="home" size={50} color='#016AFB' />
-       <FontAwesome5 name="hand-holding-heart" size={24} color="black" />
-       <Entypo name="credit-card" size={24} color="black" />
-       <MaterialCommunityIcons name="account" size={24} color="black" />
+       <FontAwesome onPress={() => navigation.navigate('Things')} name="home" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Home</Text>
+       </View>
 
+       <View>
+       <FontAwesome5 name="hand-holding-heart" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Donate</Text>
+       </View>
+
+       <View>
+       <Entypo name="credit-card" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Card</Text>
+       </View>
+
+       <View>
+       <MaterialCommunityIcons name="account" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Account</Text>
+       </View>
+       
        </View>
 
    
@@ -74,7 +92,7 @@ const styles = StyleSheet.create({
  all : {
     paddingTop: 40,
     backgroundColor: 'white',
-    paddingBottom: 100,
+    paddingBottom: 110,
  },
  myin : {
   flexDirection: 'row-reverse',
@@ -84,16 +102,16 @@ const styles = StyleSheet.create({
   borderRadius: 30,
   marginRight: 35,
   marginTop: 30,
-  marginBottom: 30,
+  marginBottom: 10,
   gap: 200,
  },
  press: {
-  borderRadius: 30,
-  // marginTop: 250,
-  padding: 20,
-  width: 310,
-  marginRight: 50,
-  marginLeft: 50,
+  borderRadius: 20,
+  marginTop: 20,
+  padding: 13,
+  // width: 310,
+  // marginRight: 50,
+  // marginLeft: 50,
   backgroundColor: '#016AFB',
 },
 buttonText: {
@@ -104,4 +122,73 @@ buttonText: {
   textAlign: 'center',
   fontFamily: 'kanit-bold',
 },
+com : {
+  color: '#016AFB',
+  fontSize: 27,
+  fontFamily: 'kanit-bold',
+  marginLeft: 20,
+  marginBottom: 20,
+  marginTop: 20,
+},
+comImg : {
+  height: 200,
+  width: 200,
+  borderRadius: 10,
+},
+we: {
+  flexDirection: 'row',
+  gap: 10,
+  marginLeft: 10,
+},
+share : {
+  color: '#016AFB',
+  fontSize: 15,
+  fontFamily: 'kanit-regular',
+},
+help : {
+  color: '#016AFB',
+  fontSize: 16,
+  fontFamily: 'kanit-regular',
+  marginLeft: 17,
+},
+logo: {
+  flexDirection: 'row',
+  justifyContent: 'center',
+  gap: 60,
+  paddingTop: 15,
+},
+logoText: {
+  color: '#016AFB',
+  paddingTop: 2,
+  fontSize: 15,
+  fontFamily: 'kanit-regular',
+},
+save: {
+  flexDirection: 'row',
+  padding: 20,
+  borderWidth: 1,
+  borderColor: '#016AFB',
+  gap: 165,
+  borderRadius: 10,
+  margin: 20,
+},
+vision : {
+  color: '#016AFB',
+  fontSize: 29,
+  fontFamily: 'kanit-bold',
+  marginBottom: 20,
+  marginTop: 20,
+  textAlign: 'center',
+},
+boy: {
+  flexDirection: 'row',
+  justifyContent: 'center',
+  gap: 15,
+  marginTop: 20,
+  marginBottom: 20,
+},
+old : {
+  width: 180,
+  height: 180,
+}
 });
