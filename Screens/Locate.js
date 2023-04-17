@@ -1,8 +1,11 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Image, Pressable, } from 'react-native';
 import React from 'react';
 import { useState } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { SelectList } from 'react-native-dropdown-select-list';
+import Tab from './Tab';
+
 
 
 
@@ -28,15 +31,18 @@ export default function Locate() {
       {key:'2', value:'Female'},
       {key:'3', value:'Prefer Not To Say'},
   ];
+    
 
 
   return (
     
-    <View>
+    <View style={styles.all}>
 
     <ScrollView>
-    <View>
-        <Text>Location</Text>
+      <View style={styles.locate}>
+        <AntDesign name="arrowleft" size={30} color='#016AFB' />
+        <Text style={styles.locateText}>Location</Text>
+        <AntDesign name="plus" size={30} color='#016AFB' />
       </View>
 
       <SelectList
@@ -61,8 +67,31 @@ export default function Locate() {
         inputStyles={styles.myinput}
        />
 
+       <View style={styles.pick}>
+
+       <Pressable style={styles.date}>
+        <Text style={styles.set}>Set Pick Up Time</Text>
+        <AntDesign name="clockcircleo" size={24} color='#016AFB' />
+       </Pressable>
+
+       <Pressable style={styles.date}>
+       <Text style={styles.set}>Set Pick Up Date</Text>
+       <AntDesign name="calendar" size={24} color='#016AFB' />
+       </Pressable>
+
+       </View>
+
+       <View>
+       <Image style={styles.map} source={require('../assets/map.png')} />
+       <Pressable style={styles.press}>
+          <Text style={styles.buttonText}>Save</Text>
+      </Pressable>
+        
+       </View>
+
     </ScrollView>
      
+     <Tab />
 
     </View>
   )
@@ -92,4 +121,62 @@ const styles = StyleSheet.create({
      color: '#016AFB',
      fontFamily: 'kanit-regular',
     },
+    press: {
+        borderRadius: 20,
+        marginTop: 20,
+        padding: 13,
+        width: 200,
+        marginLeft: 100,
+        backgroundColor: '#016AFB',
+      },
+      buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        fontSize: 16,
+        textAlign: 'center',
+        fontFamily: 'kanit-bold',
+      },
+      all : {
+        paddingTop: 80,
+        backgroundColor: 'white',
+        paddingBottom: 120,
+      },
+      locate: {
+        justifyContent: 'space-around',
+        flexDirection: 'row',
+        paddingBottom: 30,
+      },
+      pick: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 20,
+        paddingBottom: 10,
+      },
+      date: {
+        flexDirection: 'row',
+        padding: 10,
+        gap: 20,
+        borderWidth: 1,
+        borderColor: '#016AFB',
+        borderRadius: 10,
+      },
+      set: {
+        paddingTop: 4,
+        color: '#016AFB',
+        fontFamily: 'kanit-regular',
+      },
+      locateText: {
+        fontFamily: 'kanit-bold',
+        color: '#016AFB',
+        fontSize: 25,
+      },
+      map : {
+        height: 350,
+        width: 360,
+        marginLeft: 25,
+        marginTop: 10,
+        marginBottom: 10,
+      },
+    
    });

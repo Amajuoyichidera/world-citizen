@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View , Image, ScrollView, Pressable, TextInput} from 'react-native';
 import React from 'react';
 import { FontAwesome, FontAwesome5,  MaterialIcons, Entypo, MaterialCommunityIcons  } from '@expo/vector-icons';
+import Tab from './Tab';
 
 
 
@@ -55,29 +56,9 @@ return (
      <Image style={styles.old} source={require('../assets/old.png')} />
      </View>
   </ScrollView>
-
-       <View style={styles.logo}>
-       <View>
-       <FontAwesome onPress={() => navigation.navigate('Things')} name="home" size={40} color='#016AFB' />
-       <Text style={styles.logoText}>Home</Text>
-       </View>
-
-       <View>
-       <FontAwesome5 name="hand-holding-heart" size={40} color='#016AFB' />
-       <Text style={styles.logoText}>Donate</Text>
-       </View>
-
-       <View>
-       <Entypo name="credit-card" size={40} color='#016AFB' />
-       <Text style={styles.logoText}>Card</Text>
-       </View>
-
-       <View>
-       <MaterialCommunityIcons name="account" size={40} color='#016AFB' />
-       <Text style={styles.logoText}>Account</Text>
-       </View>
+    
+    <Tab />
        
-       </View>
 
    
 
