@@ -1,15 +1,14 @@
 import { View, Text, StyleSheet, ScrollView, Image, Pressable, } from 'react-native';
 import React from 'react';
 import { useState } from 'react';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import { SelectList } from 'react-native-dropdown-select-list';
-import Tab from './Tab';
+import { FontAwesome, FontAwesome5, Entypo, MaterialCommunityIcons, AntDesign  } from '@expo/vector-icons';
 
 
 
 
-export default function Locate() {
+
+export default function Locate({ navigation }) {
 
     
   const [selected, setSelected] = useState("");
@@ -40,7 +39,7 @@ export default function Locate() {
 
     <ScrollView>
       <View style={styles.locate}>
-        <AntDesign name="arrowleft" size={30} color='#016AFB' />
+        <AntDesign onPress={() => navigation.navigate('Home')} name="arrowleft" size={30} color='#016AFB' />
         <Text style={styles.locateText}>Location</Text>
         <AntDesign name="plus" size={30} color='#016AFB' />
       </View>
@@ -90,8 +89,32 @@ export default function Locate() {
        </View>
 
     </ScrollView>
-     
-     <Tab />
+
+
+    <View style={styles.logo}>
+
+       <Pressable>
+       <FontAwesome  onPress={() => navigation.navigate('Home')} name="home" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Home</Text>
+       </Pressable>
+
+       <View>
+       <FontAwesome5 name="hand-holding-heart" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Donate</Text>
+       </View>
+
+       <View>
+       <Entypo onPress={() => navigation.navigate('Card')} name="credit-card" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Card</Text>
+       </View>
+
+       <View>
+       <MaterialCommunityIcons onPress={() => navigation.navigate('Account')} name="account" size={40} color='#016AFB' />
+       <Text style={styles.logoText}>Account</Text>
+       </View>
+       
+       </View>
+    
 
     </View>
   )
@@ -178,5 +201,17 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
       },
-    
+      logo: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 60,
+        paddingTop: 20,
+        paddingBottom: 20,
+      },
+      logoText: {
+        color: '#016AFB',
+        paddingTop: 2,
+        fontSize: 15,
+        fontFamily: 'kanit-regular',
+      },
    });

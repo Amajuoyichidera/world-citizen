@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View , Image, ScrollView, Pressable, TextInput} from 'react-native';
 import React from 'react';
 import { FontAwesome, FontAwesome5,  MaterialIcons, Entypo, MaterialCommunityIcons  } from '@expo/vector-icons';
-import Tab from './Tab';
+
 
 
 
@@ -56,11 +56,33 @@ return (
      <Image style={styles.old} source={require('../assets/old.png')} />
      </View>
   </ScrollView>
-    
-    <Tab />
-       
 
-   
+
+  <View style={styles.logo}>
+
+<Pressable>
+<FontAwesome onPress={() => navigation.navigate('Home')} name="home" size={40} color='#016AFB' />
+<Text style={styles.logoText}>Home</Text>
+</Pressable>
+
+<View>
+<FontAwesome5 name="hand-holding-heart" size={40} color='#016AFB' />
+<Text style={styles.logoText}>Donate</Text>
+</View>
+
+<View>
+<Entypo onPress={() => navigation.navigate('Card')} name="credit-card" size={40} color='#016AFB' />
+<Text style={styles.logoText}>Card</Text>
+</View>
+
+<View>
+<MaterialCommunityIcons onPress={() => navigation.navigate('Account')} name="account" size={40} color='#016AFB' />
+<Text style={styles.logoText}>Account</Text>
+</View>
+
+</View>
+
+
 
   </View>
 );
@@ -137,6 +159,7 @@ logo: {
   justifyContent: 'center',
   gap: 60,
   paddingTop: 15,
+  paddingBottom: 20,
 },
 logoText: {
   color: '#016AFB',
@@ -171,5 +194,5 @@ boy: {
 old : {
   width: 180,
   height: 180,
-}
+},
 });

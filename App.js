@@ -9,7 +9,8 @@ import SignIn from './Screens/SignIn';
 import Things from './Screens/Things';
 import Home from './Screens/Home';
 import Locate from './Screens/Locate';
-import Give from './Screens/Give';
+import Card from './Screens/Card';
+import Account from './Screens/Account';
 import { useFonts  } from 'expo-font';
 import React, { useEffect } from 'react';
 import * as Splashscreen from 'expo-splash-screen';
@@ -133,6 +134,16 @@ return (
        <Stack.Screen
       name='Locate'
       component={Locate}
+      options={{ headerShown: false}}
+       />
+        <Stack.Screen
+      name='Card'
+      component={Card}
+      options={{ headerShown: false}}
+       />
+         <Stack.Screen
+      name='Account'
+      component={Account}
       options={{ headerShown: false}}
        />
   </Stack.Navigator>
